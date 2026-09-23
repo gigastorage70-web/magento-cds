@@ -240,7 +240,7 @@ export default function GalleryPage() {
             {lastUploaded && (
               <div className="upload-result">
                 <div style={{ fontWeight: 600, color: "#34d399", fontSize: "0.95rem" }}>
-                  ✓ Image Uploaded Successfully: <code>{lastUploaded.filename}</code>
+                  ✓ Image Uploaded Successfully ({lastUploaded.mode === "cloud" ? "Global CDN" : "Local Storage"}): <code>{lastUploaded.filename}</code>
                 </div>
                 <div className="result-url-box">
                   <input
@@ -257,20 +257,26 @@ export default function GalleryPage() {
                   </button>
                 </div>
 
-                <div style={{ display: "flex", gap: "1rem", alignItems: "center", flexWrap: "wrap", marginTop: "0.25rem" }}>
-                  <button
-                    className="btn-sync-git"
-                    onClick={handleGitSync}
-                    disabled={isSyncing}
-                  >
-                    {isSyncing ? "Syncing..." : "🚀 Push & Deploy to Vercel"}
-                  </button>
-                  {syncMessage && (
-                    <span style={{ fontSize: "0.85rem", color: syncMessage.includes("Error") ? "#f87171" : "#a7f3d0" }}>
-                      {syncMessage}
-                    </span>
-                  )}
-                </div>
+                {lastUploaded.mode === "local" ? (
+                  <div style={{ display: "flex", gap: "1rem", alignItems: "center", flexWrap: "wrap", marginTop: "0.25rem" }}>
+                    <button
+                      className="btn-sync-git"
+                      onClick={handleGitSync}
+                      disabled={isSyncing}
+                    >
+                      {isSyncing ? "Syncing..." : "🚀 Push & Deploy to Vercel"}
+                    </button>
+                    {syncMessage && (
+                      <span style={{ fontSize: "0.85rem", color: syncMessage.includes("Error") ? "#f87171" : "#a7f3d0" }}>
+                        {syncMessage}
+                      </span>
+                    )}
+                  </div>
+                ) : (
+                  <div style={{ fontSize: "0.8rem", color: "#94a3b8", marginTop: "0.25rem" }}>
+                    ⚡ Hosted on global CDN with instant availability. Paste directly into your CSV.
+                  </div>
+                )}
               </div>
             )}
           </div>
