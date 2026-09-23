@@ -4,6 +4,9 @@ import path from "path";
 
 export const dynamic = "force-dynamic";
 
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN || "";
+const GITHUB_REPO = "gigastorage70-web/magento-cds";
+
 export async function POST(request) {
   try {
     const data = await request.formData();
@@ -40,89 +43,70 @@ export async function POST(request) {
       cleanSku = baseName;
     }
 
-    const isVercel = !!process.env.VERCEL;
-
-    // If running locally, save to public/images and update manifest
-    if (!isVercel) {
-      try {
-        const imagesDir = path.join(process.cwd(), "public", "images");
-        if (!fs.existsSync(imagesDir)) {
-          fs.mkdirSync(imagesDir, { recursive: true });
-        }
-
-        const filePath = path.join(imagesDir, filename);
-        fs.writeFileSync(filePath, buffer);
-
-        // Update manifest.json
-        const manifestPath = path.join(process.cwd(), "public", "manifest.json");
-        let manifest = [];
-        if (fs.existsSync(manifestPath)) {
-          try {
-            manifest = JSON.parse(fs.readFileSync(manifestPath, "utf-8"));
-          } catch (e) {
-            manifest = [];
-          }
-        }
-
-        const existingIndex = manifest.findIndex((m) => m.filename === filename || m.sku === cleanSku);
-        const newEntry = {
-          sku: cleanSku,
-          filename: filename,
-          url: `/images/${filename}`,
-          size: buffer.length,
-          res: "Uploaded",
-          format: ext.replace(".", "").toUpperCase(),
-        };
-
-        if (existingIndex >= 0) {
-          manifest[existingIndex] = newEntry;
-        } else {
-          manifest.unshift(newEntry);
-        }
-
-        fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2), "utf-8");
-
-        return NextResponse.json({
-          success: true,
-          mode: "local",
-          filename,
-          sku: cleanSku,
-          size: buffer.length,
-          url: `/images/${filename}`,
-          cdnUrl: `https://magento-gold.vercel.app/images/${filename}`,
-        });
-      } catch (localErr) {
-        console.warn("Local filesystem write failed, falling back to cloud CDN:", localErr);
+    // 1. If running locally, also save to local public/images folder
+    try {
+      const imagesDir = path.join(process.cwd(), "public", "images");
+      if (fs.existsSync(imagesDir)) {
+        fs.writeFileSync(path.join(imagesDir, filename), buffer);
       }
+    } catch (e) {
+      // Ignore read-only filesystem errors on Vercel
     }
 
-    // Cloud CDN Upload for Vercel Serverless (Read-only environment)
-    const base64Data = buffer.toString("base64");
-    const cloudFormData = new FormData();
-    cloudFormData.append("key", "6d207e02198a847aa98d0a2a901485a5");
-    cloudFormData.append("action", "upload");
-    cloudFormData.append("format", "json");
-    cloudFormData.append("source", base64Data);
+    // 2. Commit directly to GitHub repository via GitHub REST API
+    let fileSha = undefined;
+    try {
+      const checkRes = await fetch(
+        `https://api.github.com/repos/${GITHUB_REPO}/contents/public/images/${filename}`,
+        {
+          headers: {
+            Authorization: `Bearer ${GITHUB_TOKEN}`,
+            Accept: "application/vnd.github+json",
+          },
+        }
+      );
+      if (checkRes.ok) {
+        const existingData = await checkRes.json();
+        fileSha = existingData.sha;
+      }
+    } catch (checkErr) {
+      console.warn("Could not check existing file SHA:", checkErr);
+    }
 
-    const cloudRes = await fetch("https://freeimage.host/api/1/upload", {
-      method: "POST",
-      body: cloudFormData,
+    const githubRes = await fetch(
+      `https://api.github.com/repos/${GITHUB_REPO}/contents/public/images/${filename}`,
+      {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${GITHUB_TOKEN}`,
+          Accept: "application/vnd.github+json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          message: `Upload product image ${filename} via web dashboard`,
+          content: buffer.toString("base64"),
+          branch: "main",
+          ...(fileSha ? { sha: fileSha } : {}),
+        }),
+      }
+    );
+
+    if (!githubRes.ok) {
+      const errData = await githubRes.json().catch(() => ({}));
+      throw new Error(`GitHub commit failed: ${errData.message || githubRes.statusText}`);
+    }
+
+    // Official Vercel Domain URL
+    const publicUrl = `https://magento-gold.vercel.app/images/${filename}`;
+
+    return NextResponse.json({
+      success: true,
+      filename,
+      sku: cleanSku,
+      size: buffer.length,
+      url: `/images/${filename}`,
+      cdnUrl: publicUrl,
     });
-
-    const cloudJson = await cloudRes.json();
-    if (cloudJson && cloudJson.image && cloudJson.image.url) {
-      return NextResponse.json({
-        success: true,
-        mode: "cloud",
-        filename,
-        sku: cleanSku,
-        size: buffer.length,
-        url: cloudJson.image.url,
-        cdnUrl: cloudJson.image.url,
-      });
-    }
-
-    throw new Error(cloudJson?.error?.message || "Cloud upload failed");
   } catch (error) {
     console.error("Upload handler error:", error);
     return NextResponse.json(
