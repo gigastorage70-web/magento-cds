@@ -7869,7 +7869,7 @@
     "url": "/images/67-31BK;1.jpg",
     "size": 124553,
     "res": "950x950",
-    "format": "WEBP"
+    "format": "JPEG"
   },
   {
     "sku": "67-31W/25",
@@ -11584,6 +11584,14 @@
     "format": "JPEG"
   },
   {
+    "sku": "AH1203FW",
+    "filename": "AH1203FW.jpg",
+    "url": "/images/AH1203FW.jpg",
+    "size": 53115,
+    "res": "1000x1000",
+    "format": "JPEG"
+  },
+  {
     "sku": "AH1203GY",
     "filename": "AH1203GY.jpg",
     "url": "/images/AH1203GY.jpg",
@@ -12909,6 +12917,14 @@
     "url": "/images/AH420B5W.jpg",
     "size": 102842,
     "res": "1000x1000",
+    "format": "JPEG"
+  },
+  {
+    "sku": "AH420B6WDR",
+    "filename": "AH420B6WDR.jpg",
+    "url": "/images/AH420B6WDR.jpg",
+    "size": 172814,
+    "res": "1280x1280",
     "format": "JPEG"
   },
   {
@@ -20949,7 +20965,7 @@
     "url": "/images/EWFTRCR15-B-BX-L.jpg",
     "size": 49577,
     "res": "1000x1000",
-    "format": "WEBP"
+    "format": "JPEG"
   },
   {
     "sku": "EWFTRCR15-BK-BX-L",
@@ -20973,7 +20989,7 @@
     "url": "/images/EWFTRCR15-LA-BX-L.jpg",
     "size": 45613,
     "res": "1000x1000",
-    "format": "WEBP"
+    "format": "JPEG"
   },
   {
     "sku": "EWFTRCR15-RB-BX-L",
@@ -21336,6 +21352,14 @@
     "format": "JPEG"
   },
   {
+    "sku": "EZ5262CDLA",
+    "filename": "EZ5262CDLA.jpg",
+    "url": "/images/EZ5262CDLA.jpg",
+    "size": 48703,
+    "res": "1000x1000",
+    "format": "JPEG"
+  },
+  {
     "sku": "EZ5262CDRD",
     "filename": "EZ5262CDRD.jpg",
     "url": "/images/EZ5262CDRD.jpg",
@@ -21388,6 +21412,22 @@
     "filename": "EZ5262CHGY.jpg",
     "url": "/images/EZ5262CHGY.jpg",
     "size": 53115,
+    "res": "1000x1000",
+    "format": "JPEG"
+  },
+  {
+    "sku": "EZ5262CHLA",
+    "filename": "EZ5262CHLA.jpg",
+    "url": "/images/EZ5262CHLA.jpg",
+    "size": 29870,
+    "res": "500x417",
+    "format": "JPEG"
+  },
+  {
+    "sku": "EZ5262CHRD",
+    "filename": "EZ5262CHRD.jpg",
+    "url": "/images/EZ5262CHRD.jpg",
+    "size": 59237,
     "res": "1000x1000",
     "format": "JPEG"
   },
@@ -21696,6 +21736,14 @@
     "format": "JPEG"
   },
   {
+    "sku": "EZ5362SCLA",
+    "filename": "EZ5362SCLA.jpg",
+    "url": "/images/EZ5362SCLA.jpg",
+    "size": 29870,
+    "res": "500x417",
+    "format": "JPEG"
+  },
+  {
     "sku": "EZ5362SCRD",
     "filename": "EZ5362SCRD.jpg",
     "url": "/images/EZ5362SCRD.jpg",
@@ -21776,6 +21824,14 @@
     "format": "JPEG"
   },
   {
+    "sku": "EZ6262CDGY",
+    "filename": "EZ6262CDGY.jpg",
+    "url": "/images/EZ6262CDGY.jpg",
+    "size": 44610,
+    "res": "1000x1000",
+    "format": "JPEG"
+  },
+  {
     "sku": "EZ6262CDLA",
     "filename": "EZ6262CDLA.jpg",
     "url": "/images/EZ6262CDLA.jpg",
@@ -21816,11 +21872,27 @@
     "format": "JPEG"
   },
   {
+    "sku": "EZ6262CHBK",
+    "filename": "EZ6262CHBK.jpg",
+    "url": "/images/EZ6262CHBK.jpg",
+    "size": 50249,
+    "res": "1000x1000",
+    "format": "JPEG"
+  },
+  {
     "sku": "EZ6262CHGN",
     "filename": "EZ6262CHGN.jpg",
     "url": "/images/EZ6262CHGN.jpg",
     "size": 29870,
     "res": "500x417",
+    "format": "JPEG"
+  },
+  {
+    "sku": "EZ6262CHGY",
+    "filename": "EZ6262CHGY.jpg",
+    "url": "/images/EZ6262CHGY.jpg",
+    "size": 50249,
+    "res": "1000x1000",
     "format": "JPEG"
   },
   {
@@ -21972,6 +22044,14 @@
     "filename": "EZ6362CDB.jpg",
     "url": "/images/EZ6362CDB.jpg",
     "size": 43444,
+    "res": "1000x1000",
+    "format": "JPEG"
+  },
+  {
+    "sku": "EZ6362CDBK",
+    "filename": "EZ6362CDBK.jpg",
+    "url": "/images/EZ6362CDBK.jpg",
+    "size": 44508,
     "res": "1000x1000",
     "format": "JPEG"
   },
@@ -22629,7 +22709,7 @@
     "url": "/images/EZ8362W.jpg",
     "size": 49386,
     "res": "1000x1000",
-    "format": "WEBP"
+    "format": "JPEG"
   },
   {
     "sku": "EZGF15B",
@@ -23584,6 +23664,14 @@
     "format": "JPEG"
   },
   {
+    "sku": "EZTR6262SCBK",
+    "filename": "EZTR6262SCBK.jpg",
+    "url": "/images/EZTR6262SCBK.jpg",
+    "size": 47500,
+    "res": "1000x1000",
+    "format": "JPEG"
+  },
+  {
     "sku": "EZTR6262SCGY",
     "filename": "EZTR6262SCGY.jpg",
     "url": "/images/EZTR6262SCGY.jpg",
@@ -23597,6 +23685,22 @@
     "url": "/images/EZTR6262SCLA.jpg",
     "size": 17041,
     "res": "500x500",
+    "format": "JPEG"
+  },
+  {
+    "sku": "EZTR6262SCRD",
+    "filename": "EZTR6262SCRD.jpg",
+    "url": "/images/EZTR6262SCRD.jpg",
+    "size": 48526,
+    "res": "1000x1000",
+    "format": "JPEG"
+  },
+  {
+    "sku": "EZTR6262SCV",
+    "filename": "EZTR6262SCV.jpg",
+    "url": "/images/EZTR6262SCV.jpg",
+    "size": 48632,
+    "res": "1000x1000",
     "format": "JPEG"
   },
   {
@@ -23640,6 +23744,14 @@
     "format": "JPEG"
   },
   {
+    "sku": "EZTR6362CDB",
+    "filename": "EZTR6362CDB.jpg",
+    "url": "/images/EZTR6362CDB.jpg",
+    "size": 43444,
+    "res": "1000x1000",
+    "format": "JPEG"
+  },
+  {
     "sku": "EZTR6362CDBK",
     "filename": "EZTR6362CDBK.jpg",
     "url": "/images/EZTR6362CDBK.jpg",
@@ -23669,6 +23781,14 @@
     "url": "/images/EZTR6362CDLA.jpg",
     "size": 14103,
     "res": "500x500",
+    "format": "JPEG"
+  },
+  {
+    "sku": "EZTR6362CDRD",
+    "filename": "EZTR6362CDRD.jpg",
+    "url": "/images/EZTR6362CDRD.jpg",
+    "size": 29870,
+    "res": "500x417",
     "format": "JPEG"
   },
   {
@@ -23828,6 +23948,14 @@
     "filename": "EZTR6362SCW.jpg",
     "url": "/images/EZTR6362SCW.jpg",
     "size": 49354,
+    "res": "1000x1000",
+    "format": "JPEG"
+  },
+  {
+    "sku": "EZTR6362V",
+    "filename": "EZTR6362V.jpg",
+    "url": "/images/EZTR6362V.jpg",
+    "size": 51411,
     "res": "1000x1000",
     "format": "JPEG"
   },
@@ -24221,7 +24349,7 @@
     "url": "/images/EZTRGFH15V.jpg",
     "size": 57809,
     "res": "1000x1000",
-    "format": "WEBP"
+    "format": "JPEG"
   },
   {
     "sku": "EZTRGFH15W",
@@ -27181,7 +27309,7 @@
     "url": "/images/LTB390WMG.jpg",
     "size": 278862,
     "res": "1500x1500",
-    "format": "WEBP"
+    "format": "JPEG"
   },
   {
     "sku": "LTB400WMG",
@@ -27205,7 +27333,7 @@
     "url": "/images/LTB500WMG.jpg",
     "size": 278862,
     "res": "1500x1500",
-    "format": "WEBP"
+    "format": "JPEG"
   },
   {
     "sku": "LTB590WMG",
@@ -27213,7 +27341,7 @@
     "url": "/images/LTB590WMG.jpg",
     "size": 278862,
     "res": "1500x1500",
-    "format": "WEBP"
+    "format": "JPEG"
   },
   {
     "sku": "LTB600WMG",
@@ -28268,6 +28396,14 @@
     "filename": "PJ18B.jpg",
     "url": "/images/PJ18B.jpg",
     "size": 40664,
+    "res": "1000x1000",
+    "format": "JPEG"
+  },
+  {
+    "sku": "PJ18BK-SP-L",
+    "filename": "PJ18BK-SP-L.jpg",
+    "url": "/images/PJ18BK-SP-L.jpg",
+    "size": 42489,
     "res": "1000x1000",
     "format": "JPEG"
   },
@@ -34752,6 +34888,14 @@
     "format": "JPEG"
   },
   {
+    "sku": "TR6252CDV",
+    "filename": "TR6252CDV.jpg",
+    "url": "/images/TR6252CDV.jpg",
+    "size": 49149,
+    "res": "1000x1000",
+    "format": "JPEG"
+  },
+  {
     "sku": "TR6252CDW",
     "filename": "TR6252CDW.jpg",
     "url": "/images/TR6252CDW.jpg",
@@ -35933,7 +36077,7 @@
     "url": "/images/TRGF15GY.jpg",
     "size": 54757,
     "res": "1000x1000",
-    "format": "WEBP"
+    "format": "JPEG"
   },
   {
     "sku": "TRGF15LA",
@@ -35949,7 +36093,7 @@
     "url": "/images/TRGF15LA-3-L.jpg",
     "size": 51676,
     "res": "1000x1000",
-    "format": "WEBP"
+    "format": "JPEG"
   },
   {
     "sku": "TRGF15V",
@@ -35965,7 +36109,7 @@
     "url": "/images/TRGF15V-3-L.jpg",
     "size": 57809,
     "res": "1000x1000",
-    "format": "WEBP"
+    "format": "JPEG"
   },
   {
     "sku": "TRGF15W",
@@ -37643,7 +37787,7 @@
     "sku": "kimok",
     "filename": "kimok.png",
     "url": "/images/kimok.png",
-    "size": 62342,
+    "size": 804144,
     "res": "Uploaded",
     "format": "PNG"
   }
